@@ -1,0 +1,60 @@
+📌 User Trait System for Meet Participants – Feature Breakdown
+1️⃣ Core Features
+✅ Users rate each other at the end of a Meet (via “Complete” button or expiration).
+✅ LinkedIn-style "Traits" system, where users can add a +1 to an existing Trait or introduce a new one.
+✅ Users cannot add duplicate Traits (Traits are unique per user).
+✅ Users can only endorse each Trait once per user, lifetime (even if they meet multiple times).
+✅ Users cannot remove Traits once given.
+✅ Trait counts are aggregated and displayed on user profiles.
+
+2️⃣ How Users Give Traits
+1️⃣ At the end of a Meet, users are shown a rating screen.
+2️⃣ They can add a new Trait or +1 an existing Trait.
+3️⃣ If a Trait already exists for that user, they cannot add a duplicate but can add +1 to it.
+4️⃣ Once submitted, Traits cannot be changed or removed.
+5️⃣ Traits appear on user profiles under the “Traits” section.
+
+3️⃣ Trait Notifications & Real-Time Updates
+🔔 When a user receives a new Trait → Notification sent.
+🔔 When a user receives a +1 on an existing Trait → Notification sent.
+🔔 Users can see a breakdown of Traits they’ve received over time.
+
+4️⃣ Database & Backend Considerations
+Table: user_traits
+Column	Type	Description
+id	INT	Primary Key
+user_id	INT	User receiving the Trait
+trait_name	VARCHAR	Name of the Trait (must be unique per user)
+count	INT	Total number of +1s received
+Table: user_trait_votes (Prevents duplicate votes)
+Column	Type	Description
+id	INT	Primary Key
+voter_id	INT	User who gave the Trait
+recipient_id	INT	User receiving the Trait
+trait_name	VARCHAR	Name of the Trait (must be unique per voter)
+5️⃣ UI/UX Flow Example
+✅ "Give Traits" button appears at the end of a Meet.
+✅ List of existing Traits (users tap to add +1).
+✅ Option to add a new Trait (only if it doesn’t already exist for that user).
+✅ Trait counts are publicly displayed on profiles.
+
+6️⃣ Edge Cases & Rules
+🚫 Users cannot add duplicate Traits to the same user.
+🚫 Users cannot give the same Trait twice to the same person.
+🚫 Users cannot remove or modify Traits after submission.
+🚫 Users cannot give Traits to themselves.
+✅ Declined/disbanded Meets do not trigger Trait voting.
+✅ Only users who participated in the Meet can vote.
+
+7️⃣ Extra Features (Future Consideration)
+🚀 Trait Badges – Highlight top Traits on a user's profile.
+🚀 Trait Leaderboard – Show most-recognized Traits across the platform.
+🚀 Trait Trends – Display the most commonly given Traits in different categories.
+
+Next Steps
+✅ Implement Trait selection UI at Meet completion.
+✅ Ensure real-time updates via WebSockets.
+✅ Add Trait notifications to the bell icon.
+✅ Optimize database to prevent duplicate voting.
+
+Does this fully match your requirements, or do you want refinements? 🚀

@@ -1,0 +1,109 @@
+// server/auth.ts - Debug User Authentication
+
+import bcrypt from "bcrypt";
+import session from "express-session";
+import { db } from "./db"; // Adjust based on your setup
+import { users } from "./schema"; // Adjust based on your setup
+
+// Express Session Middleware (Ensure it's set up correctly)
+app.use(
+  session({
+    secret: "your-secret-key",
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false }, // Set to true if using HTTPS
+  })
+);
+
+// Debugging - User Registration
+app.post("/api/register", async (req, res) => {
+  const { username, password } = req.body;
+  console.log("Registering user:", username);
+
+  // Hash password before saving
+  const hashedPassword = await bcrypt.hash(password, 10);
+  console.log("Hashed Password:", hashedPassword);
+
+  try {
+    const newUser = await db.insert(users).values({
+      username,
+      password: hashedPassword,
+    }).returning();
+
+    console.log("User registered successfully:", newUser);
+    res.status(201).json({ message: "User registered" });
+  } catch (error) {
+    console.error("Registration error:", error);
+    res.status(500).json({ error: "Registration failed" });
+  }
+});
+
+// Debugging - User Login
+app.post("/api/login", async (req, res) => {
+  const { username, password } = req.body;
+  console.log("Logging in user:", username);
+
+  const user = await db.select().from(users).where(users.username.equals(username)).first();
+  if (!user) {
+    console.log("User not found.");
+    return res.status(401).json({ error: "Invalid credentials" });
+  }
+
+  console.log("Stored Hashed Password:", user.password);
+  const match = await bcrypt.compare(password, user.password);
+
+  if (!match) {
+    console.log("Password does not match.");
+    return res.status(401).json({ error: "Invalid credentials" });
+  }
+
+  req.session.userId = user.id;
+  console.log("Session Set:", req.session);
+
+  res.json({ message: "Login successful" });
+});
+
+// Debugging - Logout
+app.post("/api/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error("Logout error:", err);
+      return res.status(500).json({ error: "Logout failed" });
+    }
+    console.log("User logged out.");
+    res.json({ message: "Logged out" });
+  });
+});
+
+// Debugging - Check Current User Session
+app.get("/api/user", (req, res) => {
+  console.log("Session Data:", req.session);
+  if (!req.session.userId) {
+    return res.status(401).json({ error: "Not authenticated" });
+  }
+  res.json({ userId: req.session.userId });
+});
+
+// Debugging - Protected Route
+app.get("/api/protected", (req, res) => {
+  console.log("Checking Auth:", req.session.userId);
+  if (!req.session.userId) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+  res.json({ message: "Protected content" });
+});
+
+// Manual SQL Queries for Debugging (Run these in DB)
+const debugQueries = `
+-- Check if the user exists
+SELECT * FROM users WHERE username = 'testuser';
+
+-- Verify if password is hashed
+SELECT password FROM users WHERE username = 'testuser';
+
+-- Check session storage (if using a session store)
+SELECT * FROM sessions;
+`;
+
+console.log("Run the following SQL queries in your database to debug:");
+console.log(debugQueries);

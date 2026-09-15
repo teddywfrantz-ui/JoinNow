@@ -1,0 +1,274 @@
+[PRD] App Idea
+
+App Name Keywords…
+Something like Meet or Meetup (Taken?)
+Something indicating what’s happening today/tonight? 
+Fuse
+Mix
+Blend
+Or another word that has nothing to do with the purpose of the app (Hinge for example…)
+
+Executive Summary
+
+Problem Statement
+
+Goals
+
+Success Metrics
+
+Any metrics that can be pulled?
+
+User Problems & Opportunities
+
+Pain Points
+
+Monetization Strategy
+
+Ability to start more groups than allowed in basic
+Ability to attempt to join more groups than allowed in basic
+Ability to jump to the top of the list of requested people to an event
+etc
+
+Basic preliminary use cases
+As a user I want to be able to see all active Meetups so that I can review them and request to join them
+As a user I want to be able to create a Meetup without having to be in a group, and have a place to review that Meetup and see the pending list of requests to join
+As a user I want to be able to create or join a group with my friends so that we can request to join a meetup altogether
+ 
+User profiles (personas)
+Include pictures?
+Age/Gender
+Small bio? (Might lead to IG handles only)
+3 interests
+Allow to select from a list of common interests
+
+Competitive Analysis
+
+App Information Architecture
+
+Key Features & Scope
+Core flow
+
+Onboarding
+
+"Meetup" creation
+Ability to create a Meetup from the Meetup tab
+Once Meetup is created will navigate you to the Search Tab to view how it looks on the map
+You do not need a group to make a meetup?
+Option to make Meetup visible for searching or not (Public or private)
+Area with radius
+Bio of Meetup (Limited characters)
+Preferences
+Only shown to certain demo (Gender, Age Range) (Try not to be dating)
+This may be hard to do with groups that have different demographics…
+Only allow other groups to join/see Meetup, or individual users, or both
+Theme (Select from specific themes)
+Can only create 1 meetup at a time
+Meetup expires after 24 hours after creation.
+Make sure to tell the user this during creation / after creating
+ 
+Profile
+Showing Name/Age/Gender
+Show/Edit bio
+Show/Edit top interests
+Show friends
+Ability to search user base to find friends
+Show individual user's rating (should we do ratings or something more like linkedin endorsements? 
+ 
+ 
+My Group tab
+The main idea is that everyone should be equal, not one person having all the power of the options of managing the group. This would leave others feeling left out and not as engaged in the app. It’s risky giving everyone power but that way everyone is equal and won’t want to bail since they also feel they have control. Same applies to when the group makes a Meetup as well.
+When not in a group
+Ability to see invitations to groups from others
+Ability to accept/reject invites
+Ability to create a group without having to have a Meetup shown on the Search tab (Map)
+(This is so users can create groups to join other group's Meetup without having to make an Meetup of their own)
+Create group
+Group name
+Invite users to group from friends list
+Must add users as friends before you can invite someone to your group
+Cannot add someone who is already in a group 
+
+
+When in a group, each member of the group has the ability to do the following:
+Ability to change name of group
+Ability to invite others to group 
+Ability to leave group 
+Ability to remove a user from group 
+Ability to request to join a Meetup for the group 
+Only the user that requested to Join the meetup can cancel that request to join a meetup. Any other member in the group cannot remove that request but should be able to see it
+
+
+Anyone in the group can request to join a meetup
+A group can request to join as many meetups at a time
+Once a meetup is accepted then the remaining meetups are auto-removed from the group that requested them and the group that received them
+
+
+Create a Meetup from the Meetups tab 
+
+  
+Additional users cannot join a group after the group has already been accepted into a meetup or have created a up meetup for the group
+
+
+Groups do not expire. They cannot be disbanded 
+
+
+See current meetup that the group is associated with (Either someone else's or their own or none)
+Pressing on the Meetup will navigate the user to the Meetup section: See Meetup Page overlay section
+ 
+ 
+ 
+Meetup Tab
+When not in a Meetup yet:
+Default opens to user's current location
+If they have created a Meetup, the map will open to their Meetup See Meetup Page overlay section
+Ability to search location to find Meetups
+Ability to filter area based on characteristics of the group of the Meetup or the Meetup itself (Gender, Age, Theme)
+ 
+Icons for Meetup in map
+I want to see an icon for the Meetup in the relative area in which the Meetup specifies
+Icon should have a theme icon for the night that the Meetup owner creates
+Press on Meetup should open the Meetup with a popover with a little about the Meetup
+How many original users are in the Meetup
+How many joined users are in the Meetup
+How many the Meetup is looking for left
+Description of what the Meetup is doing/looking for
+
+
+Average rating of all of the members in the Meetup (Including ones that joined that weren’t in the original group that created the Meetup)
+
+
+View details button
+opens the whole Meetup's full page with a lists of the Meetup’s individual users
+This can be broken down by groups or individuals without groups 
+The Individual or Group that created the Meetup  should be identified 
+Ability to click on individuals users
+Shows the brief description of each user
+Top 3 hobbies of each user
+Shows rating of user
+
+
+Request to join
+Can only see the Meetup full details when accepted by the Group (Location instead of relative area)
+
+
+Can't request to join a group if your group has more members than their group allows left
+
+
+When you request to join a meetup while you are in a group you are sending out a request on behalf of the group. If you want to join a group individually then you have to leave your current group.
+
+
+Can only see the Meetups that match a user’s their specified filters
+
+
+Different Colors based on status?
+Example:
+Accepting 0/3 - Green
+Accepting 2/3 - Yellow
+Accepting 3/3 - Red
+ 
+When in a meetup:
+Meetup Page overlay? 
+Once you have created or joined a Meetup when you go to the meetups tab there should be a way to view details of the entire Meetup that you have now joined or created
+
+
+There should still be a way to navigate back to the maps to view other existing meetups and details on them, but you will not be able to request to join other meetups while you are currently in one
+You will also not be able to create a meetup when you already have one created. Only one at a time 
+
+
+There should be a group chat for all members of the Meetup that they can communicate with
+
+
+Only the individual user or any member of the group that created the Meetup will be allowed to:
+Cancel the Meetup
+Complete the Meetup 
+Different than cancel because it identifies it as being done and then sends out reviews? 
+Remove members or groups from the meetup
+Cannot remove a member that joined from a group, you have to remove the entire group 
+A person from that group could leave, but that would also remove them from the meetup.
+A person cannot join a group that is already accepted into a meetup
+Review Requests to join the Meetup  (Accept/Reject) 
+Cannot edit the description of the meetup once created
+Cannot leave the Meetup without disbanding
+
+
+Anyone who has joined that did not create the meetup
+Can message within the group chat
+Can leave the Meetup without disbanding it 
+If user joined with a group, then their whole group would have to leave not just them (Leave as group)
+Or if they wanted to individually leave, then they would also be leaving their group that they were in as well. (Leave as individual) 
+
+
+When a Meetup disbands due to 24 hour time limit or an original member marking the meetup as complete, each member of the group has the ability to rate individual users or apply a rating score that gets set to all users. Ask user to rate as group or rate individually
+Rate as group will allow you to rate every group in the Meetup (Besides your own) with one star rating that gets applied to each individual within the group
+Rate as individuals will allow you to review every member in the Meetup (Besides ones in your group) 
+Should groups have individual ratings that specific to each group?
+Probably not because that would be difficult determining individual ratings differently from group ratings. Meetup ratings can probably just be the average of all individuals within the Meetup
+
+
+
+Settings
+Saved search/filter preferences to be applied
+History (Maybe be in profile tab?) 
+Of groups last participated in
+Of Meetups last joined
+.
+.
+.
+.
+.
+.
+
+Design Requirements
+Design Documentation
+Overview / Background
+Provide a brief overview or background about this project. What is the backstory to this project? What motivated the team to tackle this problem at this time?
+<aside> 🕒 TL; DR - One or two sentences that summarize what we are trying to do for those that don't read the full overview :)
+</aside>
+Problem
+What problem are we trying to solve for the business/user? Outline what pain points are being solved.
+
+
+Goals
+What are some goals you wish to achieve with this design?
+Make the app easy to use
+Reduce user friction for creating new account
+Allow users to follow each other with one tap
+Business Needs / Requirements / Constraints
+List any requirements or constraints that you may need to consider when designing this
+
+
+Hypothesis
+We believe that...
+So if we...
+The we will see...
+Core Flows / User Stories
+As a user, I want to do X
+As a user, I want to do X
+As a user, I want to do X
+User Research
+List any research previously done, or planned research to learn qualitative or quantitative feedback from users. This can include any related research, usability tests, surveys, etc.
+KPIs
+Example:
++ % DAU
+% MAU
++ % TS / PV
+Important Links
+Include any links, documents, or any other artifacts that help you with this project
+
+📓 Design Story
+Competitive Analysis
+What is the competitor's landscape? How are other apps or businesses solving similar UX problems? Are there common patterns or conventions that should be considered? What can we learn from them? Include screenshots and annotations as necessary.
+Explorations
+Show and talk through any relevant explorations that helped you move the design forward. Include any design explorations or artifacts that helped you make a decision. Along with providing examples of your explorations, add the rationale that enforces your decisions.
+Prototype
+*Include a working prototype here that showcases the design and interactions you have in mind. If there are multiple iterations of your prototype, clearly label them below and give a brief description of what each version includes.
+TIP: If an interactive prototype isn't available, consider adding flow diagrams, highly annotated screenshots, or GIFs to communicate your ideas.*
+Design Iterations
+As you continue to explore and make edits based on your learnings, add any updates to the design here, to create a diary of changes and iterations.
+Interactions
+What interactions need to be considered for this design? Are all interactions clearly annotated and labeled? Include any screenshots, GIFs, or videos that explain them.
+Final Design
+Include final designs here.
+Future Iterations
+
+
